@@ -3,6 +3,9 @@
 
 #include <QtGui/QMainWindow>
 #include "ui_imghistgram.h"
+#include "img_data.hpp"
+
+
 
 class ImgHistGram : public QMainWindow
 {
@@ -11,6 +14,8 @@ class ImgHistGram : public QMainWindow
 public:
 	ImgHistGram(QWidget *parent = 0, Qt::WFlags flags = 0);
 	~ImgHistGram();
+
+	bool ReadImg();
 
 	private slots:
 		void ImgHistgramPro();

@@ -21,7 +21,7 @@
 			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\Release.vsprops"
+			InheritedPropertySheets=".\Release.vsprops"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -90,7 +90,7 @@
 			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\Debug.vsprops"
+			InheritedPropertySheets=".\Debug.vsprops"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -180,6 +180,10 @@
 			>
 			<File
 				RelativePath=".\Histogram1D.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\img_data.hpp"
 				>
 			</File>
 			<File
