@@ -19,18 +19,6 @@ ImgHistGram::~ImgHistGram()
 
 }
 
-bool ImgHistGram::ReadImg()
-{
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Image"),
-		tr("."),
-		tr("Images(*.tif *.jpg *.png)"));
-	if (!fileName.isEmpty())
-	{
-		//加载图像数据
-		CImageData::Load16TifToGray16(fileName, g_imgData, imgRows, imgCols);
-	}
-	return true;
-}
 
 void ImgHistGram::ImgHistgramPro()
 {
@@ -38,14 +26,33 @@ void ImgHistGram::ImgHistgramPro()
 	Mat histImg;
 	//通过文件对话框打开图像
 
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Image"),
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Select Image"),
 		tr("."),
 		tr("Images(*.tif *.jpg *.png)"));
-	std::string str = fileName.toStdString();
+	std::string str;
+	if (fileName.isEmpty())
+	{
+		return;
+	}
+	else
+	{
+		str = fileName.toStdString();
+		QImage* img = new QImage;
+		if(!( img->load(fileName) ) ) //加载图像
+		{
+			QMessageBox::information(this,
+				tr("打开图像失败"),
+				tr("打开图像失败!"));
+			delete img;
+			return;
+		}
+		ui.imgLabel->setPixmap(QPixmap::fromImage(*img));
+	}
+	 
 
-	Mat image = imread(str);
-	histImg = hist.getHistogramImage(image);
+	//Mat image = imread(str);
+	//histImg = hist.getHistogramImage(image);
 
-	imshow("Image", image);
-	imshow("Histogram", histImg);
+	//imshow("Image", image);
+	//imshow("Histogram", histImg);
 }
