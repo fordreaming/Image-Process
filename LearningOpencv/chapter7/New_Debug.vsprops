@@ -1,7 +1,11 @@
-<?xml version="1.0"?>
-<VisualStudioPropertySheet 
-	ProjectType="Visual C++" 
-	Version="8.00" 
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
 	Name="New_Debug"
 	>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="opencv_calib3d240d.lib opencv_contrib240d.lib opencv_core240d.lib opencv_features2d240d.lib opencv_flann240d.lib opencv_gpu240d.lib opencv_highgui240d.lib opencv_imgproc240d.lib opencv_legacy240d.lib opencv_ml240d.lib opencv_objdetect240d.lib opencv_ts240d.lib opencv_video240d.lib"
+	/>
 </VisualStudioPropertySheet>
